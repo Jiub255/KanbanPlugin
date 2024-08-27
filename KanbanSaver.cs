@@ -3,7 +3,8 @@ using Godot;
 [Tool]
 public class KanbanSaver
 {
-	private string SavePath { get; } = "res://addons/kanban/kanban.data";
+	//private string OldSavePath { get; } = "res://addons/kanban/kanban.data";
+	private string SavePath { get; } = "res://kanban.data";
 	
 	public KanbanSaver() {}
 	

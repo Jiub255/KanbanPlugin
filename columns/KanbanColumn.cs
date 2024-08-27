@@ -36,29 +36,34 @@ public partial class KanbanColumn : PanelContainer
 	}
 	
 	public void InitializeColumn(ColumnData columnData)
-	{
-		Title ??= (LineEditDefocus)GetNode("%ColumnTitle");
-		Title.Text = columnData.Title;
-		Title.TooltipText = Title.Text;
-	
-		Cards ??= (Cards)GetNode("%Cards");
-		foreach (CardData cardData in columnData.Cards)
-		{
-			Cards.CreateNewCard(cardData);
-		}
-	
-		OptionsMenuButton menuButton = (OptionsMenuButton)GetNode("%MenuButton");
-		Dictionary<string, Action> labelToActionDict = new()
-		{
-			{ "Create New Card", Cards.CreateNewBlankCard },
-			{ "Expand All", Cards.ExpandAllCards },
-			{ "Collapse All", Cards.CollapseAllCards },
-			{ "Delete Column", ConfirmDeleteColumn }
-		};
-		menuButton.Initialize(labelToActionDict);
-	}
-	
-	public ColumnData GetColumnData()
+    {
+        Title ??= (LineEditDefocus)GetNode("%ColumnTitle");
+        Title.Text = columnData.Title;
+        Title.TooltipText = Title.Text;
+
+        Cards ??= (Cards)GetNode("%Cards");
+        foreach (CardData cardData in columnData.Cards)
+        {
+            Cards.CreateNewCard(cardData);
+        }
+
+        SetupButton();
+    }
+
+    private void SetupButton()
+    {
+        OptionsMenuButton menuButton = (OptionsMenuButton)GetNode("%MenuButton");
+        Dictionary<string, Action> labelToActionDict = new()
+        {
+            { "Create New Card", Cards.CreateNewBlankCard },
+            { "Expand All", Cards.ExpandAllCards },
+            { "Collapse All", Cards.CollapseAllCards },
+            { "Delete Column", ConfirmDeleteColumn }
+        };
+        menuButton.Initialize(labelToActionDict);
+    }
+
+    public ColumnData GetColumnData()
 	{
 		ColumnData columnData = new(Title.Text);
 		foreach (KanbanCard card in Cards.GetChildren())

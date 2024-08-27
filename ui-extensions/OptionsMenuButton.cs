@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// Must be initialized with a (string, Action) dictionary from whichever class is using this.
+/// Must be initialized with a (string, Action) dictionary from whichever class is using it.
 /// The string is what will be on the button choice's label, and the corresponding Action will
 /// be called when that option is selected. 
 /// </summary>
