@@ -50,7 +50,7 @@ public partial class DeleteConfirmation : ConfirmationDialog
 	{
 		base._ExitTree();
 		
-		GetOkButton().Pressed -= DeleteCardOrColumn;
+		//GetOkButton().Pressed -= DeleteCardOrColumn;
 	}
 	
 	private void DeleteCardOrColumn()

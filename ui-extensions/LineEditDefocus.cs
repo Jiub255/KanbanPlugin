@@ -20,9 +20,9 @@ public partial class LineEditDefocus : LineEdit
 	{
 		base._ExitTree();
 		
-		MouseEntered -= OnMouseEntered;
+/* 		MouseEntered -= OnMouseEntered;
 		MouseExited -= OnMouseExited;
-		TextSubmitted -= Defocus;
+		TextSubmitted -= Defocus; */
 	}
 
 	private void OnMouseEntered()

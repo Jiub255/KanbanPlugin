@@ -31,7 +31,7 @@ public partial class CardPopup : Button
 	{
 		base._ExitTree();
 		
-		Pressed -= Close;
+		//Pressed -= Close;
 	}
 
 	public void Open(KanbanCard card)

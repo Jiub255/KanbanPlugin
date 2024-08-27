@@ -51,7 +51,7 @@ public partial class KanbanCard : Button
 	
 	public void DisconnectEvents()
 	{
-		Pressed -= OpenPopup;
+		//Pressed -= OpenPopup;
 	}
 	
 	public void InitializeCard(CardData cardData)

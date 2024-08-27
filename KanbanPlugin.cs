@@ -46,7 +46,6 @@ public partial class KanbanPlugin : EditorPlugin
 			SaveBoard();
 			
 			KanbanInstance.OnBoardChanged -= SaveBoard;
-			EditorInterfaceSingleton.GetEditorSettings().SettingsChanged -= IntegrateEditorTheme;
 			
 			KanbanInstance.QueueFree();
 		}
@@ -55,7 +54,7 @@ public partial class KanbanPlugin : EditorPlugin
 	private void IntegrateEditorTheme()
 	{
 		// Copy needed types' styleboxes from editor theme into copy
-		Theme copy = new Theme();
+		Theme copy = new();
 		Theme editorTheme = EditorInterfaceSingleton.GetEditorTheme();
 		
 		CopyThemeTypeStylebox(editorTheme, copy, "PanelContaner");

@@ -28,7 +28,7 @@ public partial class OptionsMenuButton : MenuButton
 	{
 		base._ExitTree();
 		
-		PopupMenu.IdPressed -= ChooseOption;
+		//PopupMenu.IdPressed -= ChooseOption;
 	}
 	
 	/// <summary>

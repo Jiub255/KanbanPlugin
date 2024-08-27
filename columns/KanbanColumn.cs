@@ -31,7 +31,7 @@ public partial class KanbanColumn : PanelContainer
 	{
 		base._ExitTree();
 		
-		Title.TextChanged -= OnTitleChanged;
+		//Title.TextChanged -= OnTitleChanged;
 		Cards.OnCardsChanged -= OnCardsChanged;
 	}
 	

@@ -52,9 +52,9 @@ public partial class TextEditAutoBullet : TextEdit
 	{
 		base._ExitTree();
 		
-		TextChanged -= SetBulletPoints;
+/* 		TextChanged -= SetBulletPoints;
 		CaretChanged -= MoveCaretIfInBulletPointArea;
-		CaretChanged -= CheckCaretPosition;
+		CaretChanged -= CheckCaretPosition; */
 	}
 
 	public override void _Ready()
